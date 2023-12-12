@@ -5,7 +5,7 @@ import connect from "./database/configuration.js";
 config();
 connect();
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 
 server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);

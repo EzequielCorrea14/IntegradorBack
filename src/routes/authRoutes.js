@@ -10,7 +10,6 @@ import {
 
 import { check } from "express-validator";
 import validator from "../utils/validator.js";
-import validateToken from "../utils/validateToken.js";  
 
 const routerAuth = Router();
 
@@ -36,9 +35,9 @@ routerAuth.post(
   registerController
 );
 
-routerAuth.get("/users", validateToken, getUsersController);
-routerAuth.get("/user-email/:email", validateToken, getUserByEmailController);
-routerAuth.get("/user/:id", validateToken, getUserByIdController);
-routerAuth.delete("/user/:id", validateToken, deleteUserByIdController);
+routerAuth.get("/users",  getUsersController);
+routerAuth.get("/user-email/:email",  getUserByEmailController);
+routerAuth.get("/user/:id",  getUserByIdController);
+routerAuth.delete("/user/:id",  deleteUserByIdController);
 
 export default routerAuth;

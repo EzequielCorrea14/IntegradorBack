@@ -1,6 +1,6 @@
 import UserModel from "../models/user.Models.js";
 import bcrypt from "bcryptjs";
-import generateJWT from "../utils/generatejwt.js";
+
 
 const loginService = async (req, res) => {
   const { email, password } = req.body;
@@ -21,8 +21,7 @@ const loginService = async (req, res) => {
     if (!isValidPassword)
       return res.status(401).json({ message: "Invalid Email or Password" });
 
-    const token = generateJWT(email, password);
-    return res.status(200).json({ user: user, token: token });
+    
 
   } catch (error) {
     console.log(error);

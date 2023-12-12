@@ -13,7 +13,7 @@ import productBodyValidator from "../utils/productBodyValidator.js";
 
 const routerProducts = express.Router();
 
-routerProducts.get("/products",  getProductsController);
+routerProducts.get("/product",  getProductsController);
 routerProducts.post('/product', productBodyValidator, createProductController)
 routerProducts.get('/product/:id', getProductByIdController)
 routerProducts.get("/product-name/:name", getProductByNameController);
